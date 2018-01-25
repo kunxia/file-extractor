@@ -24,12 +24,12 @@ class FileExtractor:
             for filename in filenames:
                 if extension != None:
                     if filename.endswith(extension):
-                        self.__copy_file(root,filename,destination)
+                        self._copy_file(root,filename,destination)
                 else:
-                    self.__copy_file(root,filename,destination)
+                    self._copy_file(root,filename,destination)
         print("Finished copying all files. Please check the destination folder:"+destination)
 
-    def __copy_file(self,root, filename, destination):
+    def _copy_file(self,root, filename, destination):
         try:
             shutil.copy(os.path.join(root,filename),destination)
         except Exception as e:
